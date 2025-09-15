@@ -18,7 +18,7 @@ export default function AboutPage() {
     <Navbar/>
     <div className="font-work bg-black text-white">
       {/* Hero Section */}
-      <span data-aos="zoom-in down"><img src={forestBg} alt="" className="w-full" /></span>
+      <span><img src={forestBg} alt="" className="w-full" /></span>
       {/* Introduction */}
       <section className="bg-[#000000] text-white pt-36 pb-20 px-6 md:px-40">
         <div className="bg-[#191919] p-6 md:p-10 flex flex-col md:flex-row gap-6">
@@ -26,7 +26,6 @@ export default function AboutPage() {
           <img
             src={mainDog}
             alt="Mr White"
-            className=" " data-aos="zoom-in-down"
           />
 
           {/* Right Text */}

@@ -11,9 +11,6 @@ import img4 from "../assets/emo3.png"
 import blstar from "../assets/blc_star.png"
 import john from "../assets/john.png"
 import { FaArrowLeft } from "react-icons/fa";
-
-
-// Assets
 import star from "../assets/star.png";
 import heroBanner from "../assets/product.png";
 import prod1 from "../assets/prod1.png";
@@ -72,7 +69,7 @@ export default function ProductDetail() {
       </div>
 
       <div className="bg-black text-white font-sans px-6 md:px-10 py-16">
-        <div className="flex items-center gap-2 mb-4">
+        <div className="flex items-center gap-2 mb-4" data-aos="fade-left">
   <FaArrowLeft className="text-[#D3B86A] text-lg" />
   <Link to="/product-page" className="text-lg text-white underline">
     Return to collection
@@ -110,7 +107,7 @@ export default function ProductDetail() {
           {/* Product Info */}
           <div className="lg:w-1/2 ">
             {/* Rating */}
-            <div className="flex items-center gap-1 text-white font-semibold">
+            <div className="flex items-center gap-1 text-white font-semibold" data-aos="fade-down-right"  >
               <img src={star} alt="rating" className="" />
               {product.rating}/5{" "}
               <span className="ml-1 text-[#D3B86A]">{product.reviews}</span>
@@ -118,10 +115,10 @@ export default function ProductDetail() {
             </div>
 
             {/* Title */}
-            <h1 className="text-3xl font-semibold pb-5">{product.title}</h1>
+            <h1 className="text-3xl font-semibold pb-5" data-aos="fade-down-right">{product.title}</h1>
 
             {/* Pricing */}
-            <div className="flex items-center gap-4 pb-12">
+            <div className="flex items-center gap-4 pb-12" data-aos="fade-down-right">
               <p className="line-through text-white text-2xl">
                 ${product.originalPrice}
               </p>
@@ -131,13 +128,13 @@ export default function ProductDetail() {
             </div>
 
             {/* Description */}
-            <p className="text-white text-md pb-10">
+            <p className="text-white text-md pb-10" data-aos="fade-down-right"> 
               The Tail-Wagging Love Portable Hydration bottle is a convenient,
               pet-themed water bottle designed for dog lovers to stay hydrated
               on the go.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-6" data-aos="fade-down-right">
             {featuresWithIcons.map((feature, i) => (
                 <div
                 key={i}
@@ -152,7 +149,7 @@ export default function ProductDetail() {
 
             {/* Shipping + Add to Cart (No Gap) */}
             <div className="w-full overflow-hidden rounded-md mt-10">
-              <div className="bg-[#1F1F1F] px-4 py-3 flex items-center justify-center gap-2">
+              <div className="bg-[#1F1F1F] px-4 py-3 flex items-center justify-center gap-2" data-aos="fade-down-right">
                 <span className="w-2 h-2 bg-green-500 rounded-full"></span>
                 <p className="text-sm text-white">Shipped within 24h</p>
               </div>
@@ -165,7 +162,7 @@ export default function ProductDetail() {
 
             {/* Dog-care Box */}
             <div className="w-full bg-[#1C1C1C] px-4 py-5 mt-9 rounded-md flex flex-col items-center justify-center text-center">
-              <div className="flex items-center justify-center gap-3">
+              <div className="flex items-center justify-center gap-3" data-aos="fade-down-right">
                 <div className="w-16 h-16 flex items-center justify-center bg-black text-white rounded-full text-xl">
                   <FaGraduationCap className="w-8" />
                 </div>
@@ -177,8 +174,8 @@ export default function ProductDetail() {
 
             {/* Color Selector */}
             <div className="mt-14 mb-4">
-              <h4 className="text-xl font-semibold mb-3">Color</h4>
-              <div className="flex gap-4">
+              <h4 className="text-xl font-semibold mb-3" data-aos="fade-down-right">Color</h4>
+              <div className="flex gap-4" data-aos="fade-down-right">
                 {product.colors.map((color, i) => (
                   <div
                     key={i}
@@ -195,7 +192,7 @@ export default function ProductDetail() {
             </div>
 
             {/* Accordion */}
-            <div className="mt-8 text-lg md:text-xl border-t border-b border-gray-700 ">
+            <div className="mt-8 text-lg md:text-xl border-t border-b border-gray-700 " data-aos="fade-down-right">
   {sections.map((section, i) => (
     <div key={i} className="py-6 border-t border-gray-700">
       <button
@@ -225,20 +222,20 @@ export default function ProductDetail() {
     {/* Review Section */}
 <div className="mt-8">
   {/* Section Title */}
-  <h2 className="text-3xl md:text-3xl font-semibold text-center mb-8">
+  <h2 className="text-3xl md:text-3xl font-semibold text-center mb-8" data-aos="fade-down">
     Word on the Streets
   </h2>
 
   {/* Leave a Review Form */}
   <div className="bg-[#191919] p-6 rounded-lg max-w-7xl mx-auto">
-    <h3 className="text-white text-lg font-semibold mb-4 text-center">
+    <h3 className="text-white text-lg font-semibold mb-4 text-center" data-aos="fade-down">
       Leave a review
     </h3>
 
     {/* Stars */}
-    <div className="flex justify-center items-center gap-1 mb-4 text-black">
+    <div className="flex justify-center items-center gap-1 mb-4 text-black" data-aos="fade-down">
      
-      <span className="flex gap-3 items-center ml-3 text-sm text-white"><img src={blstar} alt="" />Your rating here</span>
+      <span className="flex gap-3 items-center ml-3 text-sm text-white" data-aos="fade-down"><img src={blstar} alt="" />Your rating here</span>
     </div>
 
     {/* Form Fields */}
@@ -247,16 +244,19 @@ export default function ProductDetail() {
         type="text"
         placeholder="Name"
         className="w-full px-4 py-2 rounded bg-[#000000] text-white placeholder-white "
+        data-aos="fade-down"
       />
       <input
         type="text"
         placeholder="Location"
         className="w-full px-4 py-2 rounded bg-[#000000] text-white placeholder-white "
+        data-aos="fade-down"
       />
       <textarea
         placeholder="Your Message here"
         rows="4"
         className="w-full px-4 py-2 rounded bg-[#000000] text-white resize-none placeholder-white "
+        data-aos="fade-down"
       />
     </div>
 
@@ -267,7 +267,7 @@ export default function ProductDetail() {
   </div>
 
   {/* Reviews List */}
-  <div className="mt-10 space-y-6 max-w-7xl mx-auto mb-32">
+  <div className="mt-10 space-y-6 max-w-7xl mx-auto mb-32" data-aos="fade-right">
     {[1, 2,3,4].map((review) => (
       <div
         key={review}

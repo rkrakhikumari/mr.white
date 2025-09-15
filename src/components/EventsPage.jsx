@@ -41,11 +41,11 @@ export default function EventsPage() {
       <Navbar />
       <img src={eventimg} alt="" className="w-full" />
       <div className="bg-gradient-to-b from-[#000000] to-[#0c0c0c] text-white  py-20 px-6 md:px-12 font-sans min-h-screen">
-        <h2 className="text-2xl md:text-3xl font-semibold mb-10">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-10" data-aos="fade-down">
           Mr White upcoming events
         </h2>
 
-        <div className="space-y-8">
+        <div className="space-y-8" data-aos="fade-right">
           {events.map((event, index) => (
             <div
               key={index}

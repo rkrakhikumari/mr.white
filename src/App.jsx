@@ -11,6 +11,7 @@ import Questbook from "./components/QuestBook"
 import EventsPage from "./components/EventsPage"
 import WayOfTheDog from "./components/WayDogPage"
 import LoginCard from "./components/LoginPage"
+import MrWhiteChat from "./components/MrWhiteChat";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -39,6 +40,8 @@ export default function App() {
         <Route path="/quest" element={<Questbook />} /> 
         <Route path="/events" element={<EventsPage />} />
           <Route path="/way-dog" element={<WayOfTheDog/>} /> 
+        <Route path="/user-interface" element={< MrWhiteChat/>} /> 
+
  
 
 

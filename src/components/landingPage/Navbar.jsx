@@ -4,16 +4,28 @@ import { IoChatbubble } from "react-icons/io5";
 import { TbLogin } from "react-icons/tb";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import { Link, useLocation } from "react-router-dom";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 export default function Navbar() {
   const location = useLocation();
   const [active, setActive] = useState("Home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const links = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Subscriptions", path: "/subscriptions" },
+  ];
+
+  const dropdownLinks = [
+    { name: "Legacy", path: "/legacy" },
+    { name: "Product Page", path: "/product-page" },
+    { name: "Product Detail", path: "/product/123" }, // Example ID
+    { name: "Questbook", path: "/quest" },
+    { name: "Events", path: "/events" },
+    { name: "Way of the Dog", path: "/way-dog" },
+    { name: "User Interface", path: "/user-interface" },
   ];
 
   useEffect(() => {
@@ -26,10 +38,9 @@ export default function Navbar() {
   }, [location.pathname]);
 
   return (
-    <nav className="font-work bg-black text-white px-6 py-4 md:px-12 md:py-6 fixed top-0 left-0 w-full  z-50 shadow-md">
-      {/* Top Row */}
+    <nav className="font-work bg-black text-white px-6 py-4 md:px-12 md:py-6 fixed top-0 left-0 w-full z-50 shadow-md">
       <div className="flex items-center justify-between">
-        {/* Left side: Logo + Links */}
+        {/* Left side */}
         <div className="flex items-center gap-24">
           {/* Logo */}
           <div className="flex items-center gap-2">
@@ -41,21 +52,44 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Links */}
-          <ul className="hidden md:flex gap-10 text-lg">
+          <ul className="hidden md:flex gap-10 text-lg relative">
             {links.map(({ name, path }) => (
               <li key={name} className="cursor-pointer flex items-center gap-2 hover:translate-y-1 transition-transform duration-300 ease-in-out">
-                {active === name && (
-                  <span className="w-2 h-2 rounded-full bg-[#D3B86A]"></span>
-                )}
+                {active === name && <span className="w-2 h-2 rounded-full bg-[#D3B86A]"></span>}
                 <Link
                   to={path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={active === name ? "text-lg font-semibold " : ""}
+                  className={active === name ? "text-lg font-semibold" : ""}
                 >
                   {name}
                 </Link>
               </li>
             ))}
+
+            <li className="relative">
+              <button
+                onClick={() => setShowDropdown(!showDropdown)}
+                className="flex items-center gap-2 hover:translate-y-1 transition-transform duration-300 ease-in-out cursor-pointer"
+              >
+                More {showDropdown ? <FaChevronUp /> : <FaChevronDown />}
+              </button>
+
+              {showDropdown && (
+                <ul className="absolute bg-black text-white border border-gray-700 shadow-lg mt-2 w-40 rounded-md z-50 transition-all duration-300 ease-in-out">
+                  {dropdownLinks.map(({ name, path }) => (
+                    <li key={name}>
+                      <Link
+                        to={path}
+                        onClick={() => setShowDropdown(false)}
+                        className="block px-4 py-2 hover:bg-gray-800"
+                      >
+                        {name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
           </ul>
         </div>
 

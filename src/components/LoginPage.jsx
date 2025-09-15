@@ -19,7 +19,7 @@ export default function LoginCard() {
         </button>
         {/* Logo & Title */}
         <div className="flex flex-col items-center mb-10">
-          <img src={logo} alt="Mr. White" data-aos="fade-down" />
+          <img src={logo} alt="Mr. White" data-aos="zoom-in" />
         </div>
 
         {/* Username Input */}
