@@ -23,6 +23,12 @@ export default function App() {
 }, []);
 
   return (
+    <>
+    <Routes>
+              <Route path="/login" element={<LoginCard />} />
+
+    </Routes>
+
 <main className="pt-16 sm:pt-20 md:pt-24 bg-black">
 
 <div className="bg-black text-white min-h-screen overflow-x-hidden">
@@ -32,8 +38,6 @@ export default function App() {
         <Route path="/subscriptions" element={<Subscriptions />} />
 
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/login" element={<LoginCard />} />
-
         <Route path="/legacy" element={<LegacyPage />} />
         <Route path="/product-page" element={<ProductSection />} />
         <Route path="/product/:id" element={<ProductDetail />} /> 
@@ -49,6 +53,6 @@ export default function App() {
       </Routes>
     </div>
     </main>
-
+</>
   );
 }
