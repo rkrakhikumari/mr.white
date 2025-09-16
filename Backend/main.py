@@ -17,7 +17,6 @@ app.add_middleware(
     allow_headers=["*"], 
 )
 
-# DB Dependency
 def get_db():
     db = SessionLocal()
     try:
@@ -57,7 +56,6 @@ def forgot_password(req: schemas.ForgotPasswordRequest, db: Session = Depends(ge
     reset_token = utils.generate_reset_token()
     user.reset_token = reset_token
     db.commit()
-    # ⚠️ In real app: send email with reset link (e.g., /reset-password?token=xxx)
     print(f"Generated reset token for {user.email}: {reset_token}")
     return {"msg": "Reset link generated", "reset_token": reset_token}
 

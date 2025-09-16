@@ -8,4 +8,4 @@ class User(Base):
     username = Column(String, unique=True, index=True)
     email = Column(String, unique=True, index=True)
     password = Column(String)
-    reset_token = Column(String, nullable=True)  # For lost password reset
+    reset_token = Column(String, nullable=True) 
